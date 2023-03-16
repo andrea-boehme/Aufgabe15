@@ -7,19 +7,19 @@ public class Main {
     // With a shallow copy, two collections now share the individual elements.
     //
     //Deep copies duplicate everything.
-    // A deep copy of a collection is two collections with all of the elements in the original collection duplicated.
+    // A deep copy of a collection is two collections with all the elements in the original collection duplicated.
     public static void main(String[] args) {
 
-        Person p1 = new Person(18, "Anna", "Klein", 150, 50);
-        Human h1 = new Human();
+        Person p1 = new Person(18, "Anna", "Klein", 150, 50); // neues Person Objekt erstellt.
+        Human h1 = new Human(); // neues Human Objekt erstellt.
 
-        List list = ShallowCopy.createShallowCopy(p1, 10);
-        System.out.println(list.size());
+        List listOne = ShallowCopier.createShallowCopy(p1, 10); // Methode aufgerufen welche die Liste zurückgibt und Ergebnis in "list" vom Typ Liste gespeichert.
+        System.out.println(listOne.size());                                     // bei Listen wird ".size" statt ".length" verwendet.
 
-        List<Human> listTwo = ShallowCopy.genericCreateShallowCopy(h1, 10);
+        List<Human> listTwo = ShallowCopier.genericCreateShallowCopy(h1, 10);
         System.out.println(listTwo.size());
 
-        List<Person> listThree = ShallowCopy.genericCreateShallowCopy(p1, 10);
+        List<Person> listThree = ShallowCopier.genericCreateShallowCopy(p1, 10);
         System.out.println(listThree.size());
     }
 }
